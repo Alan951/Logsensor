@@ -89,7 +89,7 @@ class main():
 				action = ""
 			if action == "?" :
 				action = ""
-			if action[0] == "/" :
+			if action != '' and action[0] == "/" :
 				action = action[1:]
 			if check :
 				action = ""
@@ -108,9 +108,9 @@ class main():
 					except IndexError:
 						pass
 		except IOError:
-			pass
-		except IndexError:
-			pass
+			print(IOError)
+		except IndexError as err:
+			print(err)
 		except KeyboardInterrupt :
 			print("\nStopped")
 			exit(0)
